@@ -1,0 +1,60 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+#nft-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  width: 80%;
+  margin: auto;
+}
+
+#nft-grid .nft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#nft-grid .nft img {
+  max-width: 100%;
+  height: auto;
+}
+
+#nft-grid .nft h2 {
+  margin-top: 20px;
+}
+
+#nft-single {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#nft-single img {
+  max-width: 100%;
+  height: auto;
+}
+
+#nft-single h2 {
+  margin-top: 20px;
+}
+
+#nft-single p {
+  margin-top: 10px;
+  text-align: center;
+}
