@@ -13,6 +13,7 @@ async function fetchNFTMetadata(asset_contract_address, token_id) {
   }
   
   async function displayNFT(asset_contract_address, token_id) {
+    // Fetch NFT data
     const nftData = await fetchNFTMetadata(asset_contract_address, token_id);
   
     if (!nftData) {
@@ -25,11 +26,11 @@ async function fetchNFTMetadata(asset_contract_address, token_id) {
   
     const div = document.createElement('div');
     div.className = 'nft';
-    
+  
     const img = document.createElement('img');
     img.src = image_url;
     img.alt = name;
-    
+  
     const h2 = document.createElement('h2');
     h2.textContent = name;
   
@@ -43,7 +44,14 @@ async function fetchNFTMetadata(asset_contract_address, token_id) {
     document.getElementById('nft-grid').appendChild(div);
   }
   
-  for(let i = 1; i <= 9; i++) {
-    displayNFT('0xe7Eb1E4AEa7AC03687c1F159b1bdf2d9d29b90dE', i.toString());
+  async function displayAllNFTs() {
+    // Fetch and display NFTs in order by token ID
+    for (let i = 1; i <= 9; i++) {
+      await displayNFT('0xe7Eb1E4AEa7AC03687c1F159b1bdf2d9d29b90dE', i.toString());
+    }
   }
+  
+  // Call the function to display all NFTs
+  displayAllNFTs();
+  
   
