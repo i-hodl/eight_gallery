@@ -1,0 +1,149 @@
+/* Single NFT view */
+
+body {
+  margin: 0;
+  font-family: 'Dosis', sans-serif;
+  background-color: #222;
+}
+
+.single-nft {
+  margin: 0 auto; /* Remove vertical margin */
+  padding: 2em;
+  animation: static 1s infinite linear;
+  background: url('broken.png');
+  background-size: cover;
+  background-color: #1C1C1C;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center;
+  overflow: auto; /* Add scrollbar if content is larger than viewport */
+}
+
+@keyframes static {
+  0% {background-position: 0 0;}
+  100% {background-position: 100% 100%;}
+}
+
+#nft-img {
+  width: 100%; /* limit the width of the image */
+  height: auto;
+  border: 5px solid #001EFF;
+  border-radius: 10px;
+  box-shadow: 0 0 0 #fbff00, 0 0 0 #a407e3, -10px 10px 50px #060222, 0 0 0 #020202;
+}
+
+.single-nft .nft-title {
+  margin-top: 2em;
+  font-size: xx-large !important; /* adjust as needed */
+  font-variant:small-caps;
+}
+
+#nft-title, .section-header {
+  font-family: 'Orbitron', sans-serif;
+  font-size: xx-large;
+  font-variant: small-caps;
+  color: #0ff;
+}
+
+#nft-description {
+  width: 60vw;
+  font-size: medium;
+  font-style: normal;
+  font-family: 'Inconsolata', sans-serif;
+  color:#0ff;
+  line-height: 1.5;
+  border: 5px #001EFF solid;
+  text-align: justify;
+  padding: 15px;
+  text-indent: 5%;
+  background-color: black;
+  border-radius: 1px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  box-shadow: 1px #007bff;
+}
+
+.single-nft .section-header {
+  margin-top: 1em;
+  font-size: xx-large; /* adjust as needed */
+  text-align: center; /* center the section header */
+  font-variant: small-caps;
+  color: #0ff;
+}
+
+.single-nft .nft-description {
+  margin-top: 1em;
+  font-size: large; /* adjust as needed */
+  line-height: 1.5; /* increase line height for readability */
+  text-align: left; /* align the text */
+  text-indent: 10%;
+  padding: 0 10%; /* add some padding to the sides to prevent the text from reaching the edge of the screen */
+}
+
+.single-nft .nft-links {
+  margin-top: 1em;
+}
+
+.single-nft .nft-links a {
+  display: inline-block;
+  margin: 0 0.5em;
+  padding: 0.5em 1em;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.single-nft .nft-links a:hover {
+  background-color: #0056b3;
+}
+.glitch {
+  position: relative;
+  color: white;
+  font-size: 2em;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  text-shadow: 0.06em 0 #ff0000;
+  background: black;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  text-shadow: -0.06em 0 #00ff00;
+}
+
+.glitch::after {
+  animation: glitch-anim 0.1s infinite linear alternate-reverse;
+  clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+  text-shadow: -0.06em 0 #0000ff;
+}
+
+@keyframes glitch-anim {
+  0%, 14%, 15%, 49%, 50%, 64%, 65%, 99%, 100% {
+    clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
+  }
+  4%, 24%, 40%, 60%, 80% {
+    clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+  }
+}
+
+@keyframes glitch-anim-2 {
+  0%, 14%, 15%, 49%, 50%, 64%, 65%, 99%, 100% {
+    clip-path: polygon(0 33%, 100% 33%, 100% 66%, 0 66%);
+  }
+  4%, 24%, 40%, 60%, 80% {
+    clip-path: polygon(0 20%, 100% 20%, 100% 80%, 0 80%);
+  }
+}
